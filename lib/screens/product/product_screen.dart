@@ -1,9 +1,11 @@
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:ecommerce_bloc/models/category_model.dart';
 import 'package:ecommerce_bloc/models/product_model.dart';
+import 'package:ecommerce_bloc/models/wishlist_model.dart';
 import 'package:ecommerce_bloc/widgets/hero_carousel_card.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../blocs/wishlist/bloc/wishlist_bloc.dart';
 import '../../widgets/widgets.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -38,12 +40,20 @@ class ProductScreen extends StatelessWidget {
                   Icons.share,
                   color: Colors.white,
                 )),
-            IconButton(
-                onPressed: () {},
-                icon: Icon(
-                  Icons.favorite,
-                  color: Colors.white,
-                )),
+            BlocBuilder<WishlistBloc, WishlistState>(
+              builder: (context, state) {
+                return IconButton(
+                    onPressed: () {
+                      context
+                          .read<WishlistBloc>()
+                          .add(AddWishlistProduct(product));
+                    },
+                    icon: Icon(
+                      Icons.favorite,
+                      color: Colors.white,
+                    ));
+              },
+            ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(primary: Colors.white),
               onPressed: () {},

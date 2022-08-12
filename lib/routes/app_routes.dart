@@ -1,4 +1,5 @@
 import 'package:ecommerce_bloc/models/category_model.dart';
+import 'package:ecommerce_bloc/models/product_model.dart';
 import 'package:ecommerce_bloc/screens/cart/cart_screen.dart';
 import 'package:ecommerce_bloc/screens/catalog/catalog_screen.dart';
 import 'package:ecommerce_bloc/screens/home/home_screen.dart';
@@ -17,7 +18,7 @@ class AppRoutes {
       case CartScreen.routeName:
         return CartScreen.route();
       case ProductScreen.routeName:
-        return ProductScreen.route();
+        return ProductScreen.route(product: settings.arguments as Product);
       case WishlistScreen.routeName:
         return WishlistScreen.route();
       case CatalogScreen.routeName:

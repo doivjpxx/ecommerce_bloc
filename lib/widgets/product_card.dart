@@ -4,8 +4,11 @@ import '../models/product_model.dart';
 
 class ProductCard extends StatelessWidget {
   final Product product;
+  final double widthFactor;
+
   const ProductCard({
     required this.product,
+    this.widthFactor = 2.5,
     Key? key,
   }) : super(key: key);
 

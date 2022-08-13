@@ -1,4 +1,4 @@
-import 'package:ecommerce_bloc/blocs/wishlist/bloc/wishlist_bloc.dart';
+import 'package:ecommerce_bloc/blocs/wishlist/wishlist_bloc.dart';
 import 'package:ecommerce_bloc/models/product_model.dart';
 import 'package:equatable/equatable.dart';
 

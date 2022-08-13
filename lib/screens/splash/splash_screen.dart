@@ -1,9 +1,5 @@
 import 'dart:async';
-
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 
 class SplashScreen extends StatelessWidget {
   static const String routeName = '/splash';
@@ -18,7 +14,8 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Timer(Duration(seconds: 2), () => Navigator.pushNamed(context, '/'));
+    Timer(Duration(seconds: 2),
+        () => Navigator.pushReplacementNamed(context, '/'));
     return Scaffold(
       body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
         Center(
